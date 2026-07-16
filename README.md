@@ -8,7 +8,7 @@
 
 Welcome to the **Rashel Store Clone**! This project is a comprehensive, full-stack eCommerce web application. I have meticulously replicated the beautiful UI/UX of the original Rashel Store while building a robust, custom backend to handle real-world eCommerce operations.
 
-**Live Demo**: [https://peppy-manatee-ec0269.netlify.app](https://peppy-manatee-ec0269.netlify.app)
+**Live Demo**: [https://peppy-manatee-ec0269.netlify.app](https://dr-rashel.netlify.app/)
 
 ---
 
