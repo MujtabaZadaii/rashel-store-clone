@@ -1,0 +1,376 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VIP Rashel Skincare Store - Design Tokens & Stylesheet */
+
+:root {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+  
+  --color-gold: #D4AF37;
+  --color-yellow: #FFC107;
+  --color-cream: #FAF8F5;
+  --color-dark: #1E1E1E;
+  --color-text: #333333;
+  --color-muted: #777777;
+  --color-light-gray: #F0EDE8;
+  --color-white: #FFFFFF;
+  
+  --btn-gradient: linear-gradient(90deg, #D4AF37, #FFC107);
+  --btn-gradient-hover: linear-gradient(90deg, #FFC107, #D4AF37);
+  
+  --shadow-premium: 0 10px 30px -10px rgba(30, 30, 30, 0.08);
+  --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.25);
+  --shadow-card-hover: 0 20px 40px -15px rgba(30, 30, 30, 0.15);
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* Base resets & layouts */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-text);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 10px;
+}
+
+/* Premium VIP UI Elements */
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* VIP Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary {
+  background: var(--btn-gradient);
+  color: var(--color-white);
+  box-shadow: var(--shadow-premium);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--btn-gradient-hover);
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-dark);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-secondary:hover {
+  background: var(--color-dark);
+  color: var(--color-white);
+  border-color: var(--color-dark);
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-text:hover {
+  color: var(--color-dark);
+}
+
+/* Cards & Hover Effects */
+.vip-card {
+  background: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(212, 175, 55, 0.05);
+}
+
+.vip-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Swiper / Category Bubbles Navigation */
+.bubble-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 0.5rem;
+  flex-wrap: wrap;
+}
+
+.bubble-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 145px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.bubble-image-wrapper {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  background-color: #FAF8F5;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-premium);
+}
+
+.bubble-item span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Tablet responsiveness (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .bubble-nav {
+    gap: 2.5rem;
+  }
+  .bubble-item, .bubble-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+  .bubble-item span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile Responsiveness for Category Bubbles */
+@media (max-width: 768px) {
+  .bubble-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 1rem 0.5rem;
+    overflow-x: visible;
+  }
+  .bubble-item {
+    width: 15%;
+    min-width: 0 !important;
+    flex-shrink: 1;
+    gap: 0.5rem;
+  }
+  .bubble-image-wrapper {
+    width: 14vw;
+    height: 14vw;
+    max-width: 80px;
+    max-height: 80px;
+    min-width: 50px;
+    min-height: 50px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    background-color: #FAF8F5;
+    box-shadow: var(--shadow-premium);
+  }
+  .bubble-item span {
+    font-size: 0.58rem;
+    letter-spacing: 0;
+    line-height: 1.2;
+    display: block;
+    word-break: break-word;
+  }
+}
+
+/* Forms & inputs */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--color-light-gray);
+  background: var(--color-white);
+  font-family: inherit;
+  color: var(--color-text);
+  transition: var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+/* Badge Alert notifications */
+.badge {
+  display: inline-flex;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-gold {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--color-gold);
+}
+
+.badge-sale {
+  background: #E53E3E;
+  color: var(--color-white);
+}
+
+/* Parallax banner slider section */
+.parallax-slider {
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-dark);
+}
+
+/* Footer layout rules */
+.vip-footer {
+  background-color: var(--color-dark);
+  color: var(--color-cream);
+  padding: 5rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}
