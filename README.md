@@ -1,84 +1,62 @@
-# 🛒 Rashel Store Clone - Full Stack MERN Application
+<p align="center">
+  <img src="./assets/readme/hero.gif" width="100%" alt="Rashel Store Clone - High-performance MERN Stack Application">
+</p>
 
-<div align="center">
-  <img src="frontend/public/hero_rice/Rice_Water_Serum_Website_Banner-01_11zon.png" alt="Rashel Store Banner" />
-</div>
+# Rashel Store Clone
 
-<br />
+> **A full-stack eCommerce web application meticulously replicating the original Rashel Store.** Features a custom robust backend and a highly responsive, modern frontend UI to handle real-world eCommerce operations gracefully.
 
-Welcome to the **Rashel Store Clone**! This project is a comprehensive, full-stack eCommerce web application. I have meticulously replicated the beautiful UI/UX of the original Rashel Store while building a robust, custom backend to handle real-world eCommerce operations.
-
-**Live Demo**: [https://peppy-manatee-ec0269.netlify.app](https://dr-rashel.netlify.app/)
-
----
-
-## 🌟 Key Features
-
-### 🛍️ Frontend (Customer Facing)
-*   **Stunning UI/UX**: Pixel-perfect clone of the original store with modern animations and responsive design.
-*   **Dynamic Product Catalog**: Browse products by categories (Face Care, Body Care, etc.), bestsellers, and special promotions (BOGO deals, Combos).
-*   **Shopping Cart System**: Add to cart, adjust quantities, and proceed to checkout smoothly.
-*   **Advanced Search & Filtering**: Find products instantly.
-*   **Customer Authentication**: Secure login and registration using JWT.
-*   **User Dashboard**: Customers can track their order history and manage their profiles.
-
-### 🛡️ Backend & Admin (Management)
-*   **Secure API**: Built with Node.js and Express, secured via JWT middleware.
-*   **Admin Dashboard**: Dedicated panel for store managers.
-*   **Product Management**: Add, edit, or delete products and variants.
-*   **Order Management**: View and update order statuses (Processing, Shipped, Delivered).
-*   **Banner/Promo Management**: Dynamically update homepage sliders and promotional banners from the dashboard.
+<p align="center">
+  <a href="https://peppy-manatee-ec0269.netlify.app"><strong>View Live Demo</strong></a> ·
+  <a href="#-how-to-use"><strong>Installation Guide</strong></a>
+</p>
 
 ---
 
-## 🚀 Tech Stack
+## ✦ What it is
 
-### Frontend
-*   **React.js** (Vite)
-*   **Tailwind CSS** (for rapid, responsive styling)
-*   **Axios** (for API communication)
-*   **React Router DOM** (for navigation)
+The **Rashel Store Clone** is a comprehensive eCommerce platform built entirely from scratch using the MERN stack (MySQL replacing MongoDB). It demonstrates a pixel-perfect, interactive UI that mirrors the original store, while bringing advanced shopping cart systems, user authentication, and a dynamic product catalog to life.
 
-### Backend
-*   **Node.js & Express.js** (RESTful API architecture)
-*   **MySQL / SQL** (Relational database structure for orders and products)
-*   **JWT (JSON Web Tokens)** (Authentication & Authorization)
-*   **Bcrypt.js** (Password hashing)
+## ✦ Why it is different
 
----
+Most clones focus solely on the frontend. This project implements a fully functional backend designed for production-like loads:
+- **Full Admin Control:** A dedicated dashboard for store managers to add/edit products, track orders, and update promotional banners dynamically.
+- **Relational Integrity:** Instead of MongoDB, this uses **MySQL**, ensuring strict relational constraints for orders, products, and customer profiles.
+- **Secure by Default:** JWT-based stateless authentication and Bcrypt password hashing protect all user transactions.
 
-## 📂 Project Structure
+## ✦ Proof & Showcase
 
-```text
-rashel-store/
-├── backend/                # Node.js Express API
-│   ├── config/             # Database connection settings
-│   ├── controllers/        # Business logic for routes
-│   ├── database/           # SQL schemas and seed data
-│   ├── middleware/         # Auth & validation middlewares
-│   ├── routes/             # Express API routes
-│   └── server.js           # Entry point for backend
-│
-└── frontend/               # React User Interface
-    ├── public/             # Static assets (images, banners)
-    ├── src/                
-    │   ├── components/     # Reusable UI components (Navbar, Footer, Cart)
-    │   ├── context/        # React Context (AuthContext, CartContext)
-    │   ├── pages/          # Main views (Home, Shop, Checkout, Admin)
-    │   └── App.jsx         # Main routing component
-    └── vite.config.js      # Vite configuration
-```
+### Consumer Storefront
+<img src="frontend/public/hero_rice/Rice_Water_Serum_Website_Banner-01_11zon.png" alt="Rashel Store UI Banner" width="100%" />
+
+*   **Stunning UI/UX**: Pixel-perfect layout with fluid animations and cross-device responsiveness.
+*   **Dynamic Product Catalog**: Browse by categories, bestsellers, and promotions (BOGO deals, Combos).
+*   **Shopping Cart System**: Real-time cart state management using React Context.
+
+## ✦ How it works
+
+The architecture is split into two primary decoupled layers:
+
+### Frontend Layer (React.js + Vite)
+- Uses **Tailwind CSS** for rapid and consistent styling across complex product grids.
+- **React Router DOM** handles client-side routing, keeping navigation instantaneous.
+- State is managed via **Context API** (`AuthContext`, `CartContext`) to reduce prop drilling.
+
+### Backend Layer (Node.js + Express)
+- A RESTful API built with **Express.js** processes all transactions.
+- **MySQL** maintains complex data relations (e.g., matching order variants to inventory).
+- Custom middleware verifies **JWT tokens** before granting access to protected routes (like the Admin dashboard).
 
 ---
 
-## 🛠️ Complete Installation Guide
+## ✦ How to use
 
 Follow these steps to run the project locally on your machine.
 
 ### 1. Prerequisites
-*   [Node.js](https://nodejs.org/) (v16 or higher)
-*   [Git](https://git-scm.com/)
-*   A local MySQL server (like XAMPP, WAMP, or standalone)
+- **Node.js** (v16 or higher)
+- **Git**
+- A local **MySQL** server (e.g., XAMPP, WAMP, or standalone)
 
 ### 2. Clone the Repository
 ```bash
@@ -87,11 +65,11 @@ cd rashel-store-clone
 ```
 
 ### 3. Database Setup
-1. Open your MySQL management tool (e.g., phpMyAdmin, MySQL Workbench).
+1. Open your MySQL management tool.
 2. Create a new database named `rashel_store`.
-3. Import the schema and seed files located in `backend/database/` to create tables and mock data.
+3. Import the SQL schema and seed files located in `backend/database/` to populate tables and mock data.
 
-### 4. Backend Configuration
+### 4. Start the Backend
 ```bash
 cd backend
 npm install
@@ -105,39 +83,35 @@ DB_PASSWORD=your_password
 DB_NAME=rashel_store
 JWT_SECRET=your_jwt_secret
 ```
-Start the backend server:
+Start the API:
 ```bash
 npm run dev
 ```
-*The server should now be running on `http://localhost:5000`*
 
-### 5. Frontend Configuration
-Open a new terminal window and navigate to the frontend folder:
+### 5. Start the Frontend
+In a new terminal window:
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-*The frontend will start on `http://localhost:5173`*
+The storefront will be available at `http://localhost:5173`.
 
 ---
 
-## 🌐 Deployment
+## ✦ Deployment
 
-*   **Frontend**: Easily deployable on platforms like **Netlify** or **Vercel**. Just set the build command to `npm run build` and publish directory to `dist`.
-*   **Backend**: Can be deployed on **Render**, **Railway**, or **Heroku**. Ensure you add the environment variables in the host's dashboard.
+*   **Frontend**: Easily deployable to Netlify or Vercel. Set the build command to `npm run build` and publish directory to `dist`.
+*   **Backend**: Can be hosted on Render, Railway, or Heroku with environment variables configured.
 
----
+## ✦ Developer
 
-## 📄 License
+Developed entirely by **Mujtaba Zadaii** as a portfolio piece demonstrating proficiency in building scalable MERN stack applications, UI replication, and REST API development.
 
-This project is licensed under the [MIT License](LICENSE).
+<br/>
 
----
-
-## 👨‍💻 About The Developer
-
-This clone was developed entirely by **Mujtaba Zadaii**. 
-It serves as a portfolio piece demonstrating proficiency in building scalable, real-world MERN stack applications, UI replication, and REST API development.
-
-*Disclaimer: This is a personal educational project. All product images and brand names belong to their respective original owners.*
+<p align="center">
+  <a href="https://github.com/oil-oil/beautify-github-readme">
+    <img src="https://img.shields.io/badge/README_MADE_WITH-beautify--github--readme-0ea5e9?style=flat-square" alt="README made with beautify-github-readme">
+  </a>
+</p>
