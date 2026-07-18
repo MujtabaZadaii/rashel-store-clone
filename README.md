@@ -112,6 +112,6 @@ Developed entirely by **Mujtaba Zadaii** as a portfolio piece demonstrating prof
 
 <p align="center">
   <a href="https://github.com/oil-oil/beautify-github-readme">
-    <img src="https://img.shields.io/badge/README_MADE_WITH-beautify--github--readme-0ea5e9?style=flat-square" alt="README made with beautify-github-readme">
+    <img src="https://img.shields.io/badge/README_MADE_WITH-beautify--github--readme-0ea5e9?style=flat-square" alt="README made with Readme-Mujtaba">
   </a>
 </p>
